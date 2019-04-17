@@ -1,0 +1,821 @@
+# 2019-01-29 21:47:32
+
+[SERVER]
+
+[SOURCE]
+Hackl0us Rules, filter, https://raw.githubusercontent.com/Hackl0us/Surge-Rule-Snippets/master/LAZY_RULES/Quantumult.conf, true
+
+[BACKUP-SERVER]
+
+[DNS]
+1.2.4.8, 114.114.114.114, 223.5.5.5, 8.8.8.8, system
+
+[REWRITE]
+^https?://(www.)?(g|google).cn url 302 https://www.google.com
+^http://mp.weixin.qq.com/mp/report _ reject
+^http://www.baidu.com https://www.baidu.com/?tn=simple 302
+^http://baidu.com https://www.baidu.com/?tn=simple 302
+^http://m.baidu.com https://www.baidu.com/?tn=simple 302
+
+//APP
+^.*\?resource=article\/recommend\&accessToken=.* - reject
+^.*/allOne.php\?ad_name=main_splash_ios - reject
+^.*m.360buyimg.com\/mobilecms\/s640x1136_jfs\/.* - reject
+^.*163\.com\/madr\?app=\b.*platform=\b.*uid.* _ reject
+
+^.*adse.*\.com\/[a-z]{4}\/loading\?appid=.* _ reject
+
+^http://sdkapp.mobile.sina.cn/interface/sdk/sdkad.php _ reject
+^http://s1.api.tv.itc.cn/v4/mobile/feeling/list.json\?api_key=.* _ reject
+^http://api.tv.sohu.com/v4/mobile/albumdetail.json\?poid=.* _ reject
+^http://baichuan.baidu.com/rs/adpmobile/launch.* _ reject
+^http://c.tieba.baidu.com/c/s/logtogether\?cmd=.* _ reject
+^http://imgsrc.baidu.com\/forum\/pic\/item/.* _ reject
+^http://s1.api.tv.itc.cn/v4/mobile/feeling/list.json\?.* _ reject
+^http://s3.pstatp.com/inapp/TTAdblock.css _ reject
+^https://capi.douyucdn.cn\/.*\/appapi\/getinfo\?.* _ reject
+^https://staticlive.douyucdn\.cn/.*\/getStartSend\?.* _ reject
+^https://capi.douyucdn.cn/lapi/sign/appapi/getinfo?aid=.* _ reject
+^http://api.zhuishushenqi.com/advert?platform=ios&position=all - reject
+^http://api.zhuishushenqi.com/splashes/ios - reject
+^http://mi.gdt.qq.com\/gdt_mview.fcg\?posid=.* - reject
+^http://api.zhuishushenqi.com\/advert\?platform=.* - reject
+^http://exp.3g.ifeng.com\/coverAdversApi\?gv=.* - reject
+^http://api.weibo.cn\/2\/statuses\/publisher_extinfo\?gsid=.* - reject
+^http://wbapp.mobile.sina.cn\/wbapplua\/wbpullad.lua\?wm=.* - reject
+^http://adse.ximalaya.com\/ting\/feed\?appid=.* - reject
+^http://adse.ximalaya.com\/ting\?appid=.* - reject
+^http://iis1.deliver.ifeng.com\/getmcode\?adid=.* - reject
+^http://ifengad.3g.ifeng.com\/ad\/pv.php\?stat=.* - reject
+^http://api.newad.ifeng.com\/ClientAdversApi1508\?adids=.* - reject
+^http://s.go.sohu.com\/adgtr\/\?gbcode=\&appchn=.* - reject
+^http://adse.ximalaya.com/ting/feed\?appid=.* - reject
+^http://adse.ximalaya.com\/ting\/loading\?appid=.* - reject
+^http://news.l.qq.com\/app\?.* - reject
+^http://r.inews.qq.com/getSplash\?apptype=ios\&startarticleid=\&__qnr=.* - reject
+^http://r.domob.cn/a - reject
+^http://api.zhuishushenqi.com/advert?platform=ios&position=all - reject
+^http://api.zhuishushenqi.com/splashes/ios - reject
+^https://lf.snssdk.com\/service\/12\/app_ad\/\?iid=\b.*os_version.* - reject //内涵
+^http://is.snssdk.com\/service\/12\/app_ad\/\?iid=\b.*os_version.* - reject //内涵
+^https://m.mynj.cn:13002/znmh_FEP/configure/getAllConfig.action - reject //我的南京
+^https://gorgon.youdao.com\/gorgon\/request\.s\?v=.* - reject
+^https://impservice.youdao.com\/imp\/request\.s\?req=.* - reject
+^https://mlife.cmbchina.com/ClientFace/preCacheAdvertise.json - reject
+
+//腾讯视频
+^https://news.l.qq.com\/app\? - reject
+^https://lives.l.qq.com\/livemsg\?sdtfrom=v3004&pu=1&style=0&guid=.* - reject
+^http://vv.video.qq.com\/getvinfo\?otype=xml&platform=10403&newplatform=10403&appVer=6.2.1.21751&qqlog=\(null\)&device=21&vid=&charge=1&fhdswitch=0&fp2p=3&defn=auto&clip=0&dtype=3&sdtfrom=v3000&encryptVer=5.2&cKey=.* - reject //视频内文
+
+//知乎
+^https://api.zhihu.com\/launch\?app=zhihu\&size=640.* - reject
+#^https://api.zhihu.com\/carousel\?size=320.* - reject
+
+//bilibili
+^https://app.bilibili.com\/x\/v2\/splash\?build=\b.*mobi_app=iphone\&ver=&width=.* - reject
+
+//有道
+^https://gorgon.youdao.com\/gorgon\/request\.s\?v=.* - reject
+^https://impservice.youdao.com\/imp\/request\.s\?req=.* - reject
+
+
+//京东威联
+^https://gw.smart.jd.com\/c\/service\/getLoadingLinks\?plat=iPhone\&hard_platform=.* - reject
+//京东钱包
+^http://m.wangyin.com/basic/version.* - reject
+//京东金融
+^https://ms.jr.jd.com\/gw\/generic\/base\/na\/m\/adInfo.* - reject
+//京东启动
+^https://api.m.jd.com\/client.action\?functionId=.* - reject
+^https://ms.jr.jd.com/\gw\/generic\/base\/n\a/m\/ad.* - reject
+
+//搜狐
+^http://api.tv.sohu.com/v4/mobile/albumdetail.json\?poid=.* _ reject
+
+//联通客户端
+^http://m.client.10010.com\/mobileService\/activity\/get_start.* - reject
+
+//移动客户端
+#^https://clientaccess.10086.cn\/biz-orange\/DN\/welcomeAdvService\/getWelcomeAdv.* - reject
+
+//新浪微博启动
+^http(s)?://wbapp.uve.weibo.com\/wbapplua\/wbpullad.lua\?wm=.* - reject
+^http(s)?:\/\/api.weibo.cn\/2\/statuses\/publisher_extinfo\?gsid=.* - reject
+^http(s)?:\/\/(sdkapp.mobile.sina.cn|sdkapp.uve.weibo.com)\/interface\/sdk\/sdkad.php - reject
+
+//QQ分析
+^https://otheve.beacon.qq.com\/analytics\/upload\?sid=.* - reject
+
+//去哪儿
+^https://support.you.163.com\/appversync\/check.do\?app_ver=.* - reject
+
+//浦发
+^https://mbank.spdbccc.com.cn\/spdbcccMbank\/load\/queryActivityConfig.* - reject
+
+//顺丰优选
+^https://mapi.sfbest.com\/brokerservice-server\/cms\/getPositionById.* - reject
+
+//网易云音乐
+^https://only\b.*nstool.netease.com\/info.js\?referer=https:\/\/nstool.netease.com\/info.js - reject
+
+
+//网易严选
+^https://support.you.163.com\/appversync\/check.do\?app_ver=.* - reject
+
+
+//腾讯手机管家
+^https://otheve.beacon.qq.com\/analytics\/upload\?sid=.* - reject
+
+
+//斗鱼
+^https://capi.douyucdn.cn\/lapi\/sign\/app(api)?\/getinfo\?client_sys=ios.* - reject //douyu
+^https://capi.douyucdn.cn/api/v1/getStartSend?client_sys=ios - reject //douyu
+^https://apiv2.douyucdn.cn\/live\/room\/info\/\d{5,7}\?client_sys=ios - reject //douyuroom
+
+//BILIBILI
+^https://app.bilibili.com\/x\/v2\/splash\?build=\b.*mobi_app=iphone\&ver=&width=.* - reject
+
+//360
+^http://commercial.shouji.360.cn\/Commercial - reject
+^http://adapi.shouji.360.cn\/IOSCommercial - reject
+^http://jia.360.cn\/conf\/btm-ad.json - reject
+^https://mad.ireader.com\/api\/internal.do\?zysid=.* - reject
+
+//豆瓣
+^https://api.douban.com\b.*\/common_ads\?.* _ reject
+
+
+//闲鱼 飞猪 票票 淘宝 千牛
+^http(s)?:\/\/\b.*alicdn.com\/(tfs|tps|mt|bao)\/((i\d{1}\/|uploaded\/)?)TB.*\b(750-1334|1242-2208|640-1136|1000-800|1125-1602)*.(jpg|png)(_960x960.*webp)? - reject
+
+
+//千牛
+^https://qngateway.taobao.com\/gw\/api\/multi_screen_adv_get - reject
+
+
+//荔枝
+^https://app.lizhi.fm\/ad\/boot\/\b.*\?tag=.* - reject
+^http://cdnimg101.lizhi.fm\/ad_cover\/.*.jpg - reject
+
+
+//NGA
+^https://bbs.nga.cn\/app_api.php\?__lib=home\&__act=ad - reject
+
+
+//网易邮箱
+^https://client.mail.163.com\/apptrack\/confinfo\/searchMultiAds.do\?appver=.* - reject
+^https://client.mail.163.com\/apptrack\/confinfo\/showAds.do.* - reject
+
+
+//玩吧
+^https://api.wodidashi.com\/api\/remoteConfig - reject
+^http://restapi.amap.com\/v3\/iasdkauth\?key=.* - reject
+
+
+//网易云阅读
+^http://easyread.163.com\/ad/.* - reject
+
+
+//氧气
+^https://api.o2bra.com.cn\/api\/splashes - reject
+
+//小红唇
+^https://www.xiaohongchun.com\/api2\/index\/get_index_nurl\?stack_info.* - reject
+^https://graph.instagram.com\/logging_client_events - reject
+
+
+//格瓦拉生活
+#^https://openapi.gewara.com\/router\/rest\? - reject
+
+//51
+^https://www.51zhangdan.com\/configcenter\-web\/splash\/getValidSplashInfo.do\?.* - reject
+^https://www.51zhangdan.com\/configcenter\-web\/splash\/getValidSplashInfo.do\?province=.* - reject
+
+
+//修正qq空间
+^http:\/\/.*:80\/gdt\/0\/\b.*.jpg\/0\?ck=\w{32}(\&w5=\b.*h5=.*)? - reject
+
+//雪球
+^http(s)?:\/\/101.201.62.22\/promotion\/display_cache.json\?date=\b.*screen_type=.* - reject
+
+//小米商城
+^http://api.m.mi.com/v1/app/start - reject
+http(s):\/\/passenger.01zhuanche.com\/car-rest\/webservice\/passenger\/recommendADs - reject
+
+//首约
+http(s):\/\/passenger.01zhuanche.com\/car-rest\/webservice\/passenger\/recommendADs - reject
+
+//京东启动备用
+https://106.39.169.231\/client.action\?functionId=start - reject
+
+
+//易道
+http:\/\/i\d{1}.yongche.name\/media\/\b.*rBEBP1lBDe6\w{35}.jpg - reject
+
+
+//老子搜书
+^http://com-eonsun-owl.oss-cn-hangzhou.aliyuncs.com\/res\/AD.*.json - reject
+
+
+//国泰君安
+^https://dl.app.gtja.com\/operation\/config\/startupConfig.json - reject
+
+
+//小蚁
+^https://api.xiaoyi.com\/v5\/app\/mobile\/ads - reject
+^https://api.xiaoyi.com\/v5\/app\/config\?userid=.* - reject
+
+//马蜂窝
+^https://mapi.mafengwo.cn\/ad\/get_launch_ad_list\/v2\?app_code=cn.mafengwo.www&app_ver=8.1.9&channel_id=.* - reject
+
+//建行
+^http://adv.ccb.com\/advall\?z=advccb\&c=.* - reject
+
+//掌阅
+^https://mad.ireader.com\/api\/internal.do\?zyeid=.* - reject
+
+//猫眼
+^http://p1.meituan.net\/640.1136\/movie\/.*.jpg.webp - reject
+
+//avn
+^https://net.rayjump.com\/openapi\/ad\/v3\?ad_num=.* - reject
+
+//iwavn
+^https://api.vungle.com\/api\/v3\/requestAd - reject
+^https://ads30.adcolony.com\/configure - reject
+
+//百度网盘/手机百度/贴吧
+^https://www.baidu.com\/\?action=static&ms=1&version=css_page_2@0.* - reject //搜索底端AD
+
+
+//熊猫直播
+^https://static.api.m.panda.tv\/index.php\?method=clientconf.firstscreen&__version=(\d+\.){0,3}\d+&__plat=ios&__channel=appstore - reject
+
+//芒果
+^https://mobile.da.mgtv.com\/m\/page - reject
+^https://mobile.da.mgtv.com\/json\/app\/boot - reject
+^https://mobile.da.mgtv.com/app/player - reject
+
+^https://mobilegw.alipay.com\/mgw.htm - reject
+^https://amdc.m.taobao.com\/amdc\/mobileDispatch - reject
+^http://amdc.m.taobao.com\/amdc\/mobileDispatch\?appkey=.* - reject
+^https://api.m.taobao.com\/api3.do\?api=mtop.common.getTimestamp.* - reject
+
+//抖音
+^(.*app_version=)10.5.0(.*) $12.4.1$2 307
+^(.*version_code=)10.5.0(.*) $12.4.1$2 307
+^(.*carrier_region=)CN(.*) $1JP$2 307
+^(.*sys_region=)CN(.*) $1JP$2 307
+^(.*language=)zh(.*) $1jp$2 307
+
+[URL-REJECTION]
+
+[TCP]
+# Apple
+HOST,hls.itunes.apple.com,Proxy
+HOST,itunes.apple.com,Proxy
+HOST,itunes.com,Proxy
+USER-AGENT,*com.apple.mobileme.fmip1,DIRECT
+USER-AGENT,com.apple.geod*,DIRECT
+USER-AGENT,com.apple.Maps,DIRECT
+HOST-SUFFIX,icloud.com,DIRECT
+HOST-SUFFIX,icloud-content.com,DIRECT
+HOST-SUFFIX,mzstatic.com,DIRECT
+HOST-SUFFIX,akadns.net,DIRECT
+HOST-SUFFIX,aaplimg.com,DIRECT
+HOST-SUFFIX,cdn-apple.com,DIRECT
+HOST-SUFFIX,apple.com,DIRECT
+#HOST,e.crashlytics.com,REJECT ##注释此选项有助于大多数App开发者分析崩溃信息；如果您拒绝一切崩溃数据统计、搜集，请取消 # 注释。
+
+# 自定义规则
+URL-REGEX,.*http:\/\/8.95508.com:8080\/ota\/ws_connect\?trancode=.*,DIRECT //广发
+URL-REGEX,http://iphone.v0.mgtv.com\/(buffer|click).php\?abroad=0&act=(buffer|vl)&.*,REJECT //芒果
+URL-REGEX,http://map.r5itf5.cn\/statics\/images\/erweima.gif,REJECT
+URL-REGEX,http://m.wgewj.cn\/sz\/15667\?token8=.*,REJECT
+#URL-REGEX,http://c.tieba.baidu.com\/c\/s\/rnSync,REJECT //贴吧开屏,待测试
+#URL-REGEX,http://c.tieba.baidu.com\/c\/.*,REJECT //贴吧内文，待测试
+URL-REGEX,http://\w+.d(omob|uomeng).*(cn|org|net)\/a,REJECT // 在意空气
+URL-REGEX,http://iadmat.nosdn.127.net\/ad.bid.material_.*,REJECT // 网易云音乐开屏
+URL-REGEX,http://music.163.com\/eapi\/ad\/.*,REJECT // 网易云音乐开屏
+URL-REGEX,http://mangaapi.manhuaren.com\/v1\/public\/getStartPageAds2\?gak=ios_manhuaren2&gat=.*,REJECT //漫画人
+URL-REGEX,http://mangaapi.manhuaren.com\/v1\/public\/getAds\?gak=ios_manhuaren2&gat=.*,REJECT //漫画人
+URL-REGEX,http://lives.l.qq.com\/livemsg\?sdtfrom=v3004\&adaptor=1\&v=TADIOSPlayerV1.0\&.*,REJECT //腾讯体育
+URL-REGEX,http://cdnfile1.msstatic.com\/cdnfile\/appad\/resource_\d{10}.zip,REJECT //虎牙直播
+URL-REGEX,http://anduril.platform.zongheng.com\/v1\/advert\/banner3\?&imei=.*,REJECT //熊猫看书
+URL-REGEX,.*\/music\/common\/upload\/(t_splash_info|tip)\/(\d{6}|\d{4}\b.+\d{5}).jpg\?fromtag.*,REJECT //QQ音乐
+URL-REGEX,http://mapiv2.yinyuetai.com\/ad\/getByPlaceId.json\?dataId=.*,REJECT //音悦台
+URL-REGEX,http://.*\/www\/default\/base.js,REJECT //移动悬浮
+URL-REGEX,http://.*:80\/gdt\/0\/.*,REJECT // QQ空间
+URL-REGEX,http://ams.rmcnmv.naver.com\/item\/create\/\d{4}\/SMR\?ams_ctgr=.*,REJECT //NAVER TV
+URL-REGEX,http://adm.10jqka.com.cn\/interface\/getads.php\?platform=.*,REJECT // 同花顺
+URL-REGEX,http://api.jiayuan.com\/mobile\/ios_qdhm.php\?action=ios_qdhm.*,REJECT
+URL-REGEX,http://w.jiayuan.com\/mkt\/appyxwz\?channel=1\&channelID=1\&channelid=.*,REJECT
+URL-REGEX,http://m.client.10010.com\/mobileService\/activity\/*.htm,REJECT // 联通客客户端
+URL-REGEX,http://rich.kuwo.cn\/AdService\/kaiping\/adinfo\?user=.*,REJECT //酷我00
+URL-REGEX,http://113.200.76.*:16420\/sxtd.bike2.01|/getkey.do,REJECT //自行车
+URL-REGEX,http://api.m.jd.com\/client.action\?functionId=start,REJECT // 京东
+URL-REGEX,http://ynuf.alipay.com\/saveWb\.json,REJECT // 淘票票
+URL-REGEX,http://adm.10jqka.com.cn\/interface\/getads.php\?platform=.*,REJECT // 同花顺
+URL-REGEX,http://api.jiayuan.com\/mobile\/ios_qdhm.php\?action=ios_qdhm.*,REJECT // jiayuan
+URL-REGEX,http://w.jiayuan.com\/mkt\/appyxwz\?channel=1\&channelID=1\&channelid=.*,REJECT
+URL-REGEX,http://m.client.10010.com\/mobileService\/activity\/*.htm,REJECT // 联通客客户端
+URL-REGEX,http://adse.ximalaya.com\/ting\/feed\?appid=.*,REJECT  // 喜马拉雅
+URL-REGEX,http://adse.ximalaya.com\/ting\?appid=.*,REJECT // 喜马拉雅
+URL-REGEX,http://adse.ximalaya.com\/ting\/loading\?appid=.*,REJECT // 喜马拉雅开启
+URL-REGEX,http://iis1.deliver.ifeng.com\/getmcode\?adid=.*,REJECT
+URL-REGEX,http://ifengad.3g.ifeng.com\/ad\/pv.php\?stat=.*,REJECT // 凤凰新闻启动
+URL-REGEX,http://api.newad.ifeng.com\/ClientAdversApi1508\?adids=.*,REJECT // 凤凰新闻
+URL-REGEX,http://exp.3g.ifeng.com\/coverAdversApi\?gv=.*,REJECT // 凤凰启动
+URL-REGEX,.*\?resource=article\/recommend\&accessToken=.*,REJECT // 新浪新闻内文
+URL-REGEX,http://s.go.sohu.com\/adgtr\/\?gbcode=\&appchn=.*,REJECT // 搜狐新闻
+URL-REGEX,http://adse.ximalaya.com/ting/feed\?appid=.*,REJECT // 喜马拉雅列表
+URL-REGEX,http://pos.baidu.com/bcym?rdid=.*\badblockplus.*,REJECT // 追书神器百度网盟
+URL-REGEX,http://news.l.qq.com\/app\?.*,REJECT // 腾讯新闻列表
+URL-REGEX,http://r.inews.qq.com/getSplash\?apptype=ios\&startarticleid=\&__qnr=.*,REJECT // 腾讯新闻开启
+URL-REGEX,http://mi.gdt.qq.com\/gdt_mview.fcg\?posid=.*,REJECT // 追书神器书架2
+URL-REGEX,http://api.zhuishushenqi.com\/advert\?platform=.*,REJECT // 追书神器书架
+URL-REGEX,http://r.domob.cn/a,REJECT // 天气软件
+URL-REGEX,.*/allOne.php\?ad_name=main_splash_ios,REJECT // 直播8
+URL-REGEX,http://api.zhuishushenqi.com/advert?platform=ios&position=all,REJECT // 书架广告
+URL-REGEX,http://api.zhuishushenqi.com/splashes/ios,REJECT // 追书神器启动
+URL-REGEX,http://r.cnews.qq.com\/getSubNewsRelate\?id=.*,REJECT // 天天快报内文
+URL-REGEX,http://pica-juicy.picacomic.com\/ios\/comic_detail,REJECT //天猫排除
+URL-REGEX,http://pica-juicy.picacomic.com\/ios\/font,REJECT //天猫排除
+URL-REGEX,http://pica-juicy.picacomic.com\/ios\/home_banner,REJECT //天猫排除
+
+# 国内网站
+HOST-SUFFIX,cn,DIRECT
+HOST-KEYWORD,-cn,DIRECT
+
+USER-AGENT,MicroMessenger Client,DIRECT
+USER-AGENT,WeChat*,DIRECT
+
+HOST-SUFFIX,126.com,DIRECT
+HOST-SUFFIX,126.net,DIRECT
+HOST-SUFFIX,127.net,DIRECT
+HOST-SUFFIX,163.com,DIRECT
+HOST-SUFFIX,360buyimg.com,DIRECT
+HOST-SUFFIX,36kr.com,DIRECT
+HOST-SUFFIX,acfun.tv,DIRECT
+HOST-SUFFIX,air-matters.com,DIRECT
+HOST-SUFFIX,aixifan.com,DIRECT
+HOST-SUFFIX,akamaized.net,DIRECT
+HOST-KEYWORD,alicdn,DIRECT
+HOST-KEYWORD,alipay,DIRECT
+HOST-KEYWORD,taobao,DIRECT
+HOST-SUFFIX,amap.com,DIRECT
+HOST-SUFFIX,autonavi.com,DIRECT
+HOST-KEYWORD,baidu,DIRECT
+HOST-SUFFIX,bdimg.com,DIRECT
+HOST-SUFFIX,bdstatic.com,DIRECT
+HOST-SUFFIX,bilibili.com,DIRECT
+HOST-SUFFIX,caiyunapp.com,DIRECT
+HOST-SUFFIX,clouddn.com,DIRECT
+HOST-SUFFIX,cnbeta.com,DIRECT
+HOST-SUFFIX,cnbetacdn.com,DIRECT
+HOST-SUFFIX,cootekservice.com,DIRECT
+HOST-SUFFIX,csdn.net,DIRECT
+HOST-SUFFIX,ctrip.com,DIRECT
+HOST-SUFFIX,dgtle.com,DIRECT
+HOST-SUFFIX,dianping.com,DIRECT
+HOST-SUFFIX,douban.com,DIRECT
+HOST-SUFFIX,doubanio.com,DIRECT
+HOST-SUFFIX,duokan.com,DIRECT
+HOST-SUFFIX,easou.com,DIRECT
+HOST-SUFFIX,ele.me,DIRECT
+HOST-SUFFIX,feng.com,DIRECT
+HOST-SUFFIX,fir.im,DIRECT
+HOST-SUFFIX,frdic.com,DIRECT
+HOST-SUFFIX,g-cores.com,DIRECT
+HOST-SUFFIX,godic.net,DIRECT
+HOST-SUFFIX,gtimg.com,DIRECT
+HOST,cdn.hockeyapp.net,DIRECT
+HOST-SUFFIX,hongxiu.com,DIRECT
+HOST-SUFFIX,hxcdn.net,DIRECT
+HOST-SUFFIX,iciba.com,DIRECT
+HOST-SUFFIX,ifeng.com,DIRECT
+HOST-SUFFIX,ifengimg.com,DIRECT
+HOST-SUFFIX,ipip.net,DIRECT
+HOST-SUFFIX,iqiyi.com,DIRECT
+HOST-SUFFIX,jd.com,DIRECT
+HOST-SUFFIX,jianshu.com,DIRECT
+HOST-SUFFIX,knewone.com,DIRECT
+HOST-SUFFIX,le.com,DIRECT
+HOST-SUFFIX,lecloud.com,DIRECT
+HOST-SUFFIX,lemicp.com,DIRECT
+HOST-SUFFIX,licdn.com,DIRECT
+HOST-SUFFIX,linkedin.com,DIRECT
+HOST-SUFFIX,luoo.net,DIRECT
+HOST-SUFFIX,meituan.com,DIRECT
+HOST-SUFFIX,meituan.net,DIRECT
+HOST-SUFFIX,mi.com,DIRECT
+HOST-SUFFIX,miaopai.com,DIRECT
+HOST-SUFFIX,microsoft.com,DIRECT
+HOST-SUFFIX,microsoftonline.com,DIRECT
+HOST-SUFFIX,miui.com,DIRECT
+HOST-SUFFIX,miwifi.com,DIRECT
+HOST-SUFFIX,mob.com,DIRECT
+HOST-SUFFIX,netease.com,DIRECT
+HOST-SUFFIX,office.com,DIRECT
+HOST-KEYWORD,officecdn,DIRECT
+HOST-SUFFIX,office365.com,DIRECT
+HOST-SUFFIX,oschina.net,DIRECT
+HOST-SUFFIX,ppsimg.com,DIRECT
+HOST-SUFFIX,pstatp.com,DIRECT
+HOST-SUFFIX,qcloud.com,DIRECT
+HOST-SUFFIX,qdaily.com,DIRECT
+HOST-SUFFIX,qdmm.com,DIRECT
+HOST-SUFFIX,qhimg.com,DIRECT
+HOST-SUFFIX,qhres.com,DIRECT
+HOST-SUFFIX,qidian.com,DIRECT
+HOST-SUFFIX,qihucdn.com,DIRECT
+HOST-SUFFIX,qiniu.com,DIRECT
+HOST-SUFFIX,qiniucdn.com,DIRECT
+HOST-SUFFIX,qiyipic.com,DIRECT
+HOST-SUFFIX,qq.com,DIRECT
+HOST-SUFFIX,qqurl.com,DIRECT
+HOST-SUFFIX,tencent.com,DIRECT
+HOST-SUFFIX,rarbg.to,DIRECT
+HOST-SUFFIX,ruguoapp.com,DIRECT
+HOST-SUFFIX,segmentfault.com,DIRECT
+HOST-SUFFIX,sinaapp.com,DIRECT
+HOST-SUFFIX,smzdm.com,DIRECT
+HOST-SUFFIX,sogou.com,DIRECT
+HOST-SUFFIX,sogoucdn.com,DIRECT
+HOST-SUFFIX,sohu.com,DIRECT
+HOST-SUFFIX,soku.com,DIRECT
+HOST-SUFFIX,speedtest.net,DIRECT
+HOST-SUFFIX,sspai.com,DIRECT
+HOST-SUFFIX,suning.com,DIRECT
+HOST-SUFFIX,taobao.com,DIRECT
+HOST-SUFFIX,tenpay.com,DIRECT
+HOST-SUFFIX,tmall.com,DIRECT
+HOST-SUFFIX,tudou.com,DIRECT
+HOST-SUFFIX,umetrip.com,DIRECT
+HOST-SUFFIX,upaiyun.com,DIRECT
+HOST-SUFFIX,upyun.com,DIRECT
+HOST-SUFFIX,v2ex.com,DIRECT
+HOST-SUFFIX,veryzhun.com,DIRECT
+HOST-SUFFIX,weather.com,DIRECT
+HOST-SUFFIX,weibo.com,DIRECT
+HOST-SUFFIX,xiami.com,DIRECT
+HOST-SUFFIX,xiami.net,DIRECT
+HOST-SUFFIX,xiaomicp.com,DIRECT
+HOST-SUFFIX,ximalaya.com,DIRECT
+HOST-SUFFIX,xmcdn.com,DIRECT
+HOST-SUFFIX,xunlei.com,DIRECT
+HOST-SUFFIX,yhd.com,DIRECT
+HOST-SUFFIX,yihaodianimg.com,DIRECT
+HOST-SUFFIX,yinxiang.com,DIRECT
+HOST-SUFFIX,ykimg.com,DIRECT
+HOST-SUFFIX,youdao.com,DIRECT
+HOST-SUFFIX,youku.com,DIRECT
+HOST-SUFFIX,zealer.com,DIRECT
+HOST-SUFFIX,zhihu.com,DIRECT
+HOST-SUFFIX,zhimg.com,DIRECT
+HOST-SUFFIX,zimuzu.tv,DIRECT
+
+# 常见广告域名屏蔽
+HOST-KEYWORD,admarvel,REJECT
+HOST-KEYWORD,admaster,REJECT
+HOST-KEYWORD,adsage,REJECT
+HOST-KEYWORD,adsmogo,REJECT
+HOST-KEYWORD,adsrvmedia,REJECT
+HOST-KEYWORD,adwords,REJECT
+HOST-KEYWORD,adservice,REJECT
+HOST-KEYWORD,domob,REJECT
+HOST-KEYWORD,duomeng,REJECT
+HOST-KEYWORD,dwtrack,REJECT
+HOST-KEYWORD,guanggao,REJECT
+HOST-KEYWORD,lianmeng,REJECT
+HOST-KEYWORD,omgmta,REJECT
+HOST-KEYWORD,openx,REJECT
+HOST-KEYWORD,partnerad,REJECT
+HOST-KEYWORD,pingfore,REJECT
+HOST-KEYWORD,supersonicads,REJECT
+HOST-KEYWORD,tracking,REJECT
+HOST-KEYWORD,uedas,REJECT
+HOST-KEYWORD,umeng,REJECT
+HOST-KEYWORD,usage,REJECT
+HOST-KEYWORD,wlmonitor,REJECT
+HOST-KEYWORD,zjtoolbar,REJECT
+
+# 抗 DNS 污染
+HOST-KEYWORD,amazon,Proxy,resolve-on-proxy
+HOST-KEYWORD,google,Proxy,resolve-on-proxy
+HOST-KEYWORD,gmail,Proxy,resolve-on-proxy
+HOST-KEYWORD,youtube,Proxy,resolve-on-proxy
+HOST-KEYWORD,facebook,Proxy,resolve-on-proxy
+HOST-SUFFIX,fb.me,Proxy,resolve-on-proxy
+HOST-SUFFIX,fbcdn.net,Proxy,resolve-on-proxy
+HOST-KEYWORD,twitter,Proxy,resolve-on-proxy
+HOST-KEYWORD,instagram,Proxy,resolve-on-proxy
+HOST-KEYWORD,dropbox,Proxy,resolve-on-proxy
+HOST-SUFFIX,twimg.com,Proxy,resolve-on-proxy
+HOST-KEYWORD,blogspot,Proxy,resolve-on-proxy
+HOST-SUFFIX,youtu.be,Proxy,resolve-on-proxy
+HOST-KEYWORD,whatsapp,Proxy,resolve-on-proxy
+
+# 国外网站
+HOST-SUFFIX,9to5mac.com,Proxy
+HOST-SUFFIX,abpchina.org,Proxy
+HOST-SUFFIX,adblockplus.org,Proxy
+HOST-SUFFIX,adobe.com,Proxy
+HOST-SUFFIX,alfredapp.com,Proxy
+HOST-SUFFIX,amplitude.com,Proxy
+HOST-SUFFIX,ampproject.org,Proxy
+HOST-SUFFIX,android.com,Proxy
+HOST-SUFFIX,angularjs.org,Proxy
+HOST-SUFFIX,aolcdn.com,Proxy
+HOST-SUFFIX,apkpure.com,Proxy
+HOST-SUFFIX,appledaily.com,Proxy
+HOST-SUFFIX,appshopper.com,Proxy
+HOST-SUFFIX,appspot.com,Proxy
+HOST-SUFFIX,arcgis.com,Proxy
+HOST-SUFFIX,archive.org,Proxy
+HOST-SUFFIX,armorgames.com,Proxy
+HOST-SUFFIX,aspnetcdn.com,Proxy
+HOST-SUFFIX,att.com,Proxy
+HOST-SUFFIX,awsstatic.com,Proxy
+HOST-SUFFIX,azureedge.net,Proxy
+HOST-SUFFIX,azurewebsites.net,Proxy
+HOST-SUFFIX,bing.com,Proxy
+HOST-SUFFIX,bintray.com,Proxy
+HOST-SUFFIX,bit.com,Proxy
+HOST-SUFFIX,bit.ly,Proxy
+HOST-SUFFIX,bitbucket.org,Proxy
+HOST-SUFFIX,bjango.com,Proxy
+HOST-SUFFIX,bkrtx.com,Proxy
+HOST-SUFFIX,blog.com,Proxy
+HOST-SUFFIX,blogcdn.com,Proxy
+HOST-SUFFIX,blogger.com,Proxy
+HOST-SUFFIX,blogsmithmedia.com,Proxy
+HOST-SUFFIX,blogspot.com,Proxy
+HOST-SUFFIX,blogspot.hk,Proxy
+HOST-SUFFIX,bloomberg.com,Proxy
+HOST-SUFFIX,box.com,Proxy
+HOST-SUFFIX,box.net,Proxy
+HOST-SUFFIX,cachefly.net,Proxy
+HOST-SUFFIX,chromium.org,Proxy
+HOST-SUFFIX,cl.ly,Proxy
+HOST-SUFFIX,cloudflare.com,Proxy
+HOST-SUFFIX,cloudfront.net,Proxy
+HOST-SUFFIX,cloudmagic.com,Proxy
+HOST-SUFFIX,cmail19.com,Proxy
+HOST-SUFFIX,cnet.com,Proxy
+HOST-SUFFIX,cocoapods.org,Proxy
+HOST-SUFFIX,comodoca.com,Proxy
+HOST-SUFFIX,crashlytics.com,Proxy
+HOST-SUFFIX,culturedcode.com,Proxy
+HOST-SUFFIX,d.pr,Proxy
+HOST-SUFFIX,danilo.to,Proxy
+HOST-SUFFIX,dayone.me,Proxy
+HOST-SUFFIX,db.tt,Proxy
+HOST-SUFFIX,deskconnect.com,Proxy
+HOST-SUFFIX,disq.us,Proxy
+HOST-SUFFIX,disqus.com,Proxy
+HOST-SUFFIX,disquscdn.com,Proxy
+HOST-SUFFIX,dnsimple.com,Proxy
+HOST-SUFFIX,docker.com,Proxy
+HOST-SUFFIX,dribbble.com,Proxy
+HOST-SUFFIX,droplr.com,Proxy
+HOST-SUFFIX,duckduckgo.com,Proxy
+HOST-SUFFIX,dueapp.com,Proxy
+HOST-SUFFIX,dytt8.net,Proxy
+HOST-SUFFIX,edgecastcdn.net,Proxy
+HOST-SUFFIX,edgekey.net,Proxy
+HOST-SUFFIX,edgesuite.net,Proxy
+HOST-SUFFIX,engadget.com,Proxy
+HOST-SUFFIX,entrust.net,Proxy
+HOST-SUFFIX,eurekavpt.com,Proxy
+HOST-SUFFIX,evernote.com,Proxy
+HOST-SUFFIX,fabric.io,Proxy
+HOST-SUFFIX,fast.com,Proxy
+HOST-SUFFIX,fastly.net,Proxy
+HOST-SUFFIX,fc2.com,Proxy
+HOST-SUFFIX,feedburner.com,Proxy
+HOST-SUFFIX,feedly.com,Proxy
+HOST-SUFFIX,feedsportal.com,Proxy
+HOST-SUFFIX,fiftythree.com,Proxy
+HOST-SUFFIX,firebaseio.com,Proxy
+HOST-SUFFIX,flexibits.com,Proxy
+HOST-SUFFIX,flickr.com,Proxy
+HOST-SUFFIX,flipboard.com,Proxy
+HOST-SUFFIX,g.co,Proxy
+HOST-SUFFIX,gabia.net,Proxy
+HOST-SUFFIX,geni.us,Proxy
+HOST-SUFFIX,gfx.ms,Proxy
+HOST-SUFFIX,ggpht.com,Proxy
+HOST-SUFFIX,ghostnoteapp.com,Proxy
+HOST-SUFFIX,git.io,Proxy
+HOST-KEYWORD,github,Proxy
+HOST-SUFFIX,globalsign.com,Proxy
+HOST-SUFFIX,gmodules.com,Proxy
+HOST-SUFFIX,godaddy.com,Proxy
+HOST-SUFFIX,golang.org,Proxy
+HOST-SUFFIX,gongm.in,Proxy
+HOST-SUFFIX,goo.gl,Proxy
+HOST-SUFFIX,goodreaders.com,Proxy
+HOST-SUFFIX,goodreads.com,Proxy
+HOST-SUFFIX,gravatar.com,Proxy
+HOST-SUFFIX,gstatic.com,Proxy
+HOST-SUFFIX,gvt0.com,Proxy
+HOST-SUFFIX,hockeyapp.net,Proxy
+HOST-SUFFIX,hotmail.com,Proxy
+HOST-SUFFIX,icons8.com,Proxy
+HOST-SUFFIX,ift.tt,Proxy
+HOST-SUFFIX,ifttt.com,Proxy
+HOST-SUFFIX,iherb.com,Proxy
+HOST-SUFFIX,imageshack.us,Proxy
+HOST-SUFFIX,img.ly,Proxy
+HOST-SUFFIX,imgur.com,Proxy
+HOST-SUFFIX,imore.com,Proxy
+HOST-SUFFIX,instapaper.com,Proxy
+HOST-SUFFIX,ipn.li,Proxy
+HOST-SUFFIX,is.gd,Proxy
+HOST-SUFFIX,issuu.com,Proxy
+HOST-SUFFIX,itgonglun.com,Proxy
+HOST-SUFFIX,itun.es,Proxy
+HOST-SUFFIX,ixquick.com,Proxy
+HOST-SUFFIX,j.mp,Proxy
+HOST-SUFFIX,js.revsci.net,Proxy
+HOST-SUFFIX,jshint.com,Proxy
+HOST-SUFFIX,jtvnw.net,Proxy
+HOST-SUFFIX,justgetflux.com,Proxy
+HOST-SUFFIX,kat.cr,Proxy
+HOST-SUFFIX,klip.me,Proxy
+HOST-SUFFIX,libsyn.com,Proxy
+HOST-SUFFIX,linode.com,Proxy
+HOST-SUFFIX,lithium.com,Proxy
+HOST-SUFFIX,littlehj.com,Proxy
+HOST-SUFFIX,live.com,Proxy
+HOST-SUFFIX,live.net,Proxy
+HOST-SUFFIX,livefilestore.com,Proxy
+HOST-SUFFIX,llnwd.net,Proxy
+HOST-SUFFIX,macid.co,Proxy
+HOST-SUFFIX,macromedia.com,Proxy
+HOST-SUFFIX,macrumors.com,Proxy
+HOST-SUFFIX,mashable.com,Proxy
+HOST-SUFFIX,mathjax.org,Proxy
+HOST-SUFFIX,medium.com,Proxy
+HOST-SUFFIX,mega.co.nz,Proxy
+HOST-SUFFIX,mega.nz,Proxy
+HOST-SUFFIX,megaupload.com,Proxy
+HOST-SUFFIX,microsofttranslator.com,Proxy
+HOST-SUFFIX,mindnode.com,Proxy
+HOST-SUFFIX,mobile01.com,Proxy
+HOST-SUFFIX,modmyi.com,Proxy
+HOST-SUFFIX,msedge.net,Proxy
+HOST-SUFFIX,myfontastic.com,Proxy
+HOST-SUFFIX,name.com,Proxy
+HOST-SUFFIX,nextmedia.com,Proxy
+HOST-SUFFIX,nsstatic.net,Proxy
+HOST-SUFFIX,nssurge.com,Proxy
+HOST-SUFFIX,nyt.com,Proxy
+HOST-SUFFIX,nytimes.com,Proxy
+HOST-SUFFIX,omnigroup.com,Proxy
+HOST-SUFFIX,onedrive.com,Proxy
+HOST-SUFFIX,onenote.com,Proxy
+HOST-SUFFIX,ooyala.com,Proxy
+HOST-SUFFIX,openvpn.net,Proxy
+HOST-SUFFIX,openwrt.org,Proxy
+HOST-SUFFIX,orkut.com,Proxy
+HOST-SUFFIX,osxdaily.com,Proxy
+HOST-SUFFIX,outlook.com,Proxy
+HOST-SUFFIX,ow.ly,Proxy
+HOST-SUFFIX,paddleapi.com,Proxy
+HOST-SUFFIX,parallels.com,Proxy
+HOST-SUFFIX,parse.com,Proxy
+HOST-SUFFIX,pdfexpert.com,Proxy
+HOST-SUFFIX,periscope.tv,Proxy
+HOST-SUFFIX,pinboard.in,Proxy
+HOST-SUFFIX,pinterest.com,Proxy
+HOST-SUFFIX,pixelmator.com,Proxy
+HOST-SUFFIX,pixiv.net,Proxy
+HOST-SUFFIX,playpcesor.com,Proxy
+HOST-SUFFIX,playstation.com,Proxy
+HOST-SUFFIX,playstation.com.hk,Proxy
+HOST-SUFFIX,playstation.net,Proxy
+HOST-SUFFIX,playstationnetwork.com,Proxy
+HOST-SUFFIX,pushwoosh.com,Proxy
+HOST-SUFFIX,rime.im,Proxy
+HOST-SUFFIX,servebom.com,Proxy
+HOST-SUFFIX,sfx.ms,Proxy
+HOST-SUFFIX,shadowsocks.org,Proxy
+HOST-SUFFIX,sharethis.com,Proxy
+HOST-SUFFIX,shazam.com,Proxy
+HOST-SUFFIX,skype.com,Proxy
+HOST-SUFFIX,smartdnsProxy.com,Proxy
+HOST-SUFFIX,smartmailcloud.com,Proxy
+HOST-SUFFIX,sndcdn.com,Proxy
+HOST-SUFFIX,sony.com,Proxy
+HOST-SUFFIX,soundcloud.com,Proxy
+HOST-SUFFIX,sourceforge.net,Proxy
+HOST-SUFFIX,spotify.com,Proxy
+HOST-SUFFIX,squarespace.com,Proxy
+HOST-SUFFIX,sstatic.net,Proxy
+HOST-SUFFIX,st.luluku.pw,Proxy
+HOST-SUFFIX,stackoverflow.com,Proxy
+HOST-SUFFIX,startpage.com,Proxy
+HOST-SUFFIX,staticflickr.com,Proxy
+HOST-SUFFIX,steamcommunity.com,Proxy
+HOST-SUFFIX,symauth.com,Proxy
+HOST-SUFFIX,symcb.com,Proxy
+HOST-SUFFIX,symcd.com,Proxy
+HOST-SUFFIX,tapbots.com,Proxy
+HOST-SUFFIX,tapbots.net,Proxy
+HOST-SUFFIX,tdesktop.com,Proxy
+HOST-SUFFIX,techcrunch.com,Proxy
+HOST-SUFFIX,techsmith.com,Proxy
+HOST-SUFFIX,thepiratebay.org,Proxy
+HOST-SUFFIX,theverge.com,Proxy
+HOST-SUFFIX,time.com,Proxy
+HOST-SUFFIX,timeinc.net,Proxy
+HOST-SUFFIX,tiny.cc,Proxy
+HOST-SUFFIX,tinypic.com,Proxy
+HOST-SUFFIX,tmblr.co,Proxy
+HOST-SUFFIX,todoist.com,Proxy
+HOST-SUFFIX,trello.com,Proxy
+HOST-SUFFIX,trustasiassl.com,Proxy
+HOST-SUFFIX,tumblr.co,Proxy
+HOST-SUFFIX,tumblr.com,Proxy
+HOST-SUFFIX,tweetdeck.com,Proxy
+HOST-SUFFIX,tweetmarker.net,Proxy
+HOST-SUFFIX,twitch.tv,Proxy,resolve-on-proxy
+HOST-SUFFIX,txmblr.com,Proxy
+HOST-SUFFIX,typekit.net,Proxy
+HOST-SUFFIX,ubertags.com,Proxy
+HOST-SUFFIX,ublock.org,Proxy
+HOST-SUFFIX,ubnt.com,Proxy
+HOST-SUFFIX,ulyssesapp.com,Proxy
+HOST-SUFFIX,urchin.com,Proxy
+HOST-SUFFIX,usertrust.com,Proxy
+HOST-SUFFIX,v.gd,Proxy
+HOST-SUFFIX,vimeo.com,Proxy
+HOST-SUFFIX,vimeocdn.com,Proxy
+HOST-SUFFIX,vine.co,Proxy
+HOST-SUFFIX,vivaldi.com,Proxy
+HOST-SUFFIX,vox-cdn.com,Proxy
+HOST-SUFFIX,vsco.co,Proxy
+HOST-SUFFIX,vultr.com,Proxy
+HOST-SUFFIX,w.org,Proxy
+HOST-SUFFIX,w3schools.com,Proxy
+HOST-SUFFIX,webtype.com,Proxy
+HOST-SUFFIX,wikiwand.com,Proxy
+HOST-SUFFIX,wikileaks.org,Proxy
+HOST-SUFFIX,wikimedia.org,Proxy
+HOST-SUFFIX,wikipedia.com,Proxy
+HOST-SUFFIX,wikipedia.org,Proxy
+HOST-SUFFIX,windows.com,Proxy
+HOST-SUFFIX,windows.net,Proxy
+HOST-SUFFIX,wire.com,Proxy
+HOST-SUFFIX,wordpress.com,Proxy
+HOST-SUFFIX,workflowy.com,Proxy
+HOST-SUFFIX,wp.com,Proxy
+HOST-SUFFIX,wsj.com,Proxy
+HOST-SUFFIX,wsj.net,Proxy
+HOST-SUFFIX,xda-developers.com,Proxy
+HOST-SUFFIX,xeeno.com,Proxy
+HOST-SUFFIX,xiti.com,Proxy
+HOST-SUFFIX,yahoo.com,Proxy
+HOST-SUFFIX,yimg.com,Proxy
+HOST-SUFFIX,ying.com,Proxy
+HOST-SUFFIX,yoyo.org,Proxy
+HOST-SUFFIX,ytimg.com,Proxy
+
+# Telegram
+## 域名
+HOST-SUFFIX,telegra.ph,Proxy
+HOST-SUFFIX,telegram.org,Proxy
+
+## IPv4 地址段
+IP-CIDR,91.108.56.0/22,Proxy,no-resolve
+IP-CIDR,91.108.4.0/22,Proxy,no-resolve
+IP-CIDR,91.108.8.0/22,Proxy,no-resolve
+IP-CIDR,109.239.140.0/24,Proxy,no-resolve
+IP-CIDR,149.154.160.0/20,Proxy,no-resolve
+IP-CIDR,149.154.164.0/22,Proxy,no-resolve
+
+# LAN
+HOST-SUFFIX,local,DIRECT
+IP-CIDR,127.0.0.0/8,DIRECT
+IP-CIDR,172.16.0.0/12,DIRECT
+IP-CIDR,192.168.0.0/16,DIRECT
+IP-CIDR,10.0.0.0/8,DIRECT
+IP-CIDR,17.0.0.0/8,DIRECT
+IP-CIDR,100.64.0.0/10,DIRECT
+
+# 最终规则
+GEOIP,CN,DIRECT
+FINAL,PROXY
+
+[GLOBAL]
+
+[HOST]
+
+[STATE]
+STATE,AUTO
+
+[MITM]
+hostname = capi.douyucdn.cn, apiv2.douyucdn.cn, bbs.nga.cn, api.zhihu.com, mlife.cmbchina.com, impservice.youdao.com, gorgon.youdao.com, m.mynj.cn, lf.snssdk.com, api.m.taobao.com, amdc.m.taobao.com, mobilegw.alipay.com, api.wodidashi.com, *.alicdn.com, api.douban.com, otheve.beacon.qq.com, support.you.163.com, qde.qunar.com, client.qunar.com, api.weibo.cn, sdkapp.mobile.sina.cn, sdkapp.uve.weibo.com, passenger.01zhuanche.com, www.51zhangdan.com, www.xiaohongchun.com, api.o2bra.com.cn, api.wodidashi.com, client.mail.163.com, app.lizhi.fm, api.xiaoyi.com, dl.app.gtja.com, api.vungle.com, ads30.adcolony.com, net.rayjump.com, mbd.baidu.com, afd.baidu.com, pan.baidu.com, www.baidu.com, static.api.m.panda.tv, acs.m.taobao.com, lives.l.qq.com, news.l.qq.com, mapi.mafengwo.cn, *musical.ly, *tiktokv.com, *byteoversea.com
